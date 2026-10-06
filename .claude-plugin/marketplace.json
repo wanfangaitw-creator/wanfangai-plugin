@@ -1,0 +1,14 @@
+{
+  "name": "uberteach",
+  "owner": {
+    "name": "UberTeach 平台團隊"
+  },
+  "description": "UberTeach 院內工具平台的 AI 助手外掛",
+  "plugins": [
+    {
+      "name": "uberteach",
+      "source": "./plugins/uberteach",
+      "description": "UberTeach 院內工具平台"
+    }
+  ]
+}

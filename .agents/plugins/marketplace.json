@@ -1,0 +1,20 @@
+{
+  "name": "uberteach",
+  "interface": {
+    "displayName": "UberTeach"
+  },
+  "plugins": [
+    {
+      "name": "uberteach",
+      "source": {
+        "source": "local",
+        "path": "./plugins/uberteach"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "productivity"
+    }
+  ]
+}

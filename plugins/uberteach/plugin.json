@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "uberteach",
+  "version": "2026.9.15",
+  "description": "UberTeach 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.10，官方 skill 2026.09.10）",
+  "homepage": "https://platform.wanfangai.tw",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "UberTeach 院內工具平台",
+        "shortDescription": "在院內平台做小工具、通過檢核、發佈給同仁用",
+        "developerName": "UberTeach 平台團隊",
+        "category": "Productivity",
+        "websiteURL": "https://platform.wanfangai.tw",
+        "defaultPrompt": [
+          "我想在院內平台做一個小工具"
+        ]
+      }
+    }
+  }
+}
