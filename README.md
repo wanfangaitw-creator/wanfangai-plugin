@@ -26,3 +26,13 @@ claude plugin install uberteach@uberteach
 ```
 
 或在 Claude Code 對話裡打 `/plugin marketplace add wanfangaitw-creator/wanfangai-plugin`，再從 `/plugin` 的清單安裝。裝好之後**重開 Claude** 才會生效。
+
+## 安全掃描
+
+每一次發佈或改版，這個 plugin 裡的每一份 skill 都用兩個第三方開源工具檢查過：
+NVIDIA SkillSpector 與 Cisco Skill Scanner（離線執行，不連網、不送 AI 分析）。
+嚴重度「高」以上而且沒有說明理由的發現會擋下發佈；接受的例外都附理由。
+結果在同一個 repo 的 [`SECURITY-SCAN.md`](SECURITY-SCAN.md)。
+
+通過代表「列出的自動檢查沒有發現擋下的問題」，不代表保證安全。這個 plugin 只會連到你所屬院區的 UberTeach 平台與 GitHub 上的版本號，
+鑰匙只存在你家目錄的 `.uberteach` 資料夾。

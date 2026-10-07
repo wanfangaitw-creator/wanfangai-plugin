@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "uberteach",
-  "version": "2026.9.15",
-  "description": "UberTeach 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.10，官方 skill 2026.09.10）",
+  "version": "2026.10.2",
+  "description": "UberTeach 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.15，官方 skill 2026.10.3）",
   "homepage": "https://platform.wanfangai.tw",
   "extensions": {
     "com.openai": {

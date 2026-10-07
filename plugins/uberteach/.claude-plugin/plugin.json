@@ -1,7 +1,7 @@
 {
   "name": "uberteach",
-  "version": "2026.9.15",
-  "description": "UberTeach 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.10，官方 skill 2026.09.10）",
+  "version": "2026.10.2",
+  "description": "UberTeach 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.15，官方 skill 2026.10.3）",
   "author": {
     "name": "UberTeach 平台團隊"
   },

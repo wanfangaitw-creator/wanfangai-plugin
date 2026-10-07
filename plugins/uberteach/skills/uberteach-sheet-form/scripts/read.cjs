@@ -14,7 +14,7 @@
 'use strict';
 const PLATFORM = 'https://platform.wanfangai.tw';
 /** The version this copy was built as (plugin.json). */
-const PLUGIN_VERSION = '2026.9.15';
+const PLUGIN_VERSION = '2026.10.2';
 /** plugin.json in the repo people install from; '' or unfilled = no check. */
 const LATEST_URL = 'https://raw.githubusercontent.com/wanfangaitw-creator/wanfangai-plugin/main/plugins/uberteach/plugin.json';
 
