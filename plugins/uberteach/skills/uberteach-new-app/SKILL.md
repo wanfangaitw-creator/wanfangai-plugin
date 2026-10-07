@@ -1,13 +1,13 @@
 ---
 name: uberteach-new-app
-description: 在 UberTeach 平台做一個新的院內工具時用：查有沒有現成的、選官方做法、建立應用與程式碼倉庫、第一次存到雲端。還沒連上平台先用 uberteach-connect。
+description: 在 醫智匯平台做一個新的院內工具時用：查有沒有現成的、選官方做法、建立應用與程式碼倉庫、第一次存到雲端。還沒連上平台先用 uberteach-connect。
 ---
 
-# 在 UberTeach 做一個新工具
+# 在醫智匯做一個新工具
 
 **規則只有一份：平台上的契約（llms.txt）。**這份 skill 只告訴你讀哪幾章、用哪支附帶的指令。一律一章一章讀。
 
-`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份 UberTeach skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
+`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份醫智匯 skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
 
 **一個指令只讀一章**（兩章放在同一個指令裡，加起來就超過讀取工具的上限，會被截掉）。
 每一章的輸出最後一行是「（第 N 章到此結束）」；**沒看到這一行、或看到 `truncated`／`omitted` 之類的省略標記，就單獨再讀那一章**，不要憑記憶補。

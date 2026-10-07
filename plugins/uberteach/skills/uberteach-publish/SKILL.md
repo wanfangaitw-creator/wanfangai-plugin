@@ -1,6 +1,6 @@
 ---
 name: uberteach-publish
-description: UberTeach 工具要存到雲端檢核、發佈試用版或正式版、更新已上線的工具，或使用者說「發佈」「放上去試試」「上線」時用；上線後的維運與錯誤碼也在這裡找。
+description: 醫智匯工具要存到雲端檢核、發佈試用版或正式版、更新已上線的工具，或使用者說「發佈」「放上去試試」「上線」時用；上線後的維運與錯誤碼也在這裡找。
 ---
 
 # 檢核與發佈
@@ -14,7 +14,7 @@ node "<這個資料夾>/scripts/read.cjs" contract 4
 node "<這個資料夾>/scripts/read.cjs" contract 6
 ```
 
-`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份 UberTeach skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
+`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份醫智匯 skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
 
 **一個指令只讀一章**（兩章放在同一個指令裡，加起來就超過讀取工具的上限，會被截掉）。
 每一章的輸出最後一行是「（第 N 章到此結束）」；**沒看到這一行、或看到 `truncated`／`omitted` 之類的省略標記，就單獨再讀那一章**，不要憑記憶補。

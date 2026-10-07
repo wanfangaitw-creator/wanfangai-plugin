@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Reads the live platform rules one piece at a time, so an agent's tool output never has to hold
 // the whole contract (about 100 KB; Codex keeps the start and end and drops the middle, which is
-// where §3 lives — seen 2026-09-23). Bundled into every skill of the UberTeach plugin.
+// where §3 lives — seen 2026-09-23). Bundled into every skill of the 醫智匯 plugin.
 //
 //   node read.cjs contract          the table of contents
 //   node read.cjs contract 3        one chapter (3, 0.5, 4.55 …; "## 3." also works)
@@ -14,7 +14,7 @@
 'use strict';
 const PLATFORM = 'https://platform.wanfangai.tw';
 /** The version this copy was built as (plugin.json). */
-const PLUGIN_VERSION = '2026.10.2';
+const PLUGIN_VERSION = '2026.10.3';
 /** plugin.json in the repo people install from; '' or unfilled = no check. */
 const LATEST_URL = 'https://raw.githubusercontent.com/wanfangaitw-creator/wanfangai-plugin/main/plugins/uberteach/plugin.json';
 
@@ -63,16 +63,16 @@ async function pluginNotice() {
     const latest = (await res.json()).version;
     if (!latest) throw new Error('沒有 version');
     if (latest === PLUGIN_VERSION) {
-      console.log(`（UberTeach plugin ${PLUGIN_VERSION}，是最新版）`);
+      console.log(`（醫智匯 plugin ${PLUGIN_VERSION}，是最新版）`);
     } else {
       console.log(
-        `（UberTeach plugin 有新版：這台電腦裝的是 ${PLUGIN_VERSION}，最新是 ${latest}。` +
+        `（醫智匯 plugin 有新版：這台電腦裝的是 ${PLUGIN_VERSION}，最新是 ${latest}。` +
           '照 uberteach-connect「plugin 有新版時」那一段告訴使用者，不要中斷手上的事）',
       );
     }
   } catch (err) {
     console.log(
-      `（查不到 UberTeach plugin 的最新版本：${err.cause?.code ?? err.message}；這次略過，不影響使用）`,
+      `（查不到醫智匯 plugin 的最新版本：${err.cause?.code ?? err.message}；這次略過，不影響使用）`,
     );
   }
 }

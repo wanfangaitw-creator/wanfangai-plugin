@@ -1,7 +1,7 @@
 {
   "name": "uberteach",
   "interface": {
-    "displayName": "UberTeach"
+    "displayName": "醫智匯"
   },
   "plugins": [
     {

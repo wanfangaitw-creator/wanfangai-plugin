@@ -1,6 +1,6 @@
-# UberTeach plugin 2026.10.2 安全掃描報告
+# 醫智匯 plugin 2026.10.3 安全掃描報告
 
-產生時間：2026-10-07 03:25 UTC　結果：**通過**
+產生時間：2026-10-07 12:14 UTC　結果：**通過**
 
 這份報告由發佈流程自動產生：每一次發佈或改版，plugin 裡的每一份 skill 都用兩個第三方開源掃描工具檢查過，
 工具只在離線模式執行（不連網、不送 AI 分析）。**通過代表「下面列的自動檢查沒有發現擋下的問題」，不代表保證安全。**
@@ -9,7 +9,7 @@
 |---|---|
 | NVIDIA SkillSpector | SkillSpector v2.12.0 |
 | Cisco Skill Scanner | skill-scanner 2.2.1 |
-| 掃描映像 | `skill-audit:dev`（sha256:111725f639b8） |
+| 掃描映像 | `skill-audit:local`（sha256:111725f639b8） |
 
 擋下的門檻：嚴重度「高」以上、而且不在例外清單；掃描工具沒有跑完也算未通過。
 
@@ -17,7 +17,7 @@
 |---|---|---|---|---|
 | uberteach-app-metrics | 32 | 3 | 3 | 通過 |
 | uberteach-chart-dashboard | 32 | 3 | 3 | 通過 |
-| uberteach-classify | 32 | 3 | 2 | 通過 |
+| uberteach-classify | 32 | 3 | 3 | 通過 |
 | uberteach-connect | 52 | 5 | 3 | 通過 |
 | uberteach-content-site | 32 | 3 | 3 | 通過 |
 | uberteach-faq-bot | 32 | 3 | 3 | 通過 |

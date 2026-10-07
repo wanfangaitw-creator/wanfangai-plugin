@@ -1,6 +1,6 @@
 ---
 name: uberteach-classify
-description: UberTeach 工具要寫或改 app-manifest.yml、決定資安等級，或使用者提到病人、員工、名單、要存資料、Google 試算表時用：先做分級問診，這決定工具能不能上線。
+description: 醫智匯工具要寫或改 app-manifest.yml、決定資安等級，或使用者提到病人、員工、名單、要存資料、Google 試算表時用：先做分級問診，這決定工具能不能上線。
 ---
 
 # 分級問診與分類
@@ -11,7 +11,7 @@ description: UberTeach 工具要寫或改 app-manifest.yml、決定資安等級�
 node "<這個資料夾>/scripts/read.cjs" contract 3
 ```
 
-`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份 UberTeach skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
+`<這個資料夾>` 是這份 SKILL.md 所在的資料夾（完整路徑去掉 `SKILL.md`；Windows 也用 `/`），長得像 `~/.codex/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Codex）或 `~/.claude/plugins/cache/uberteach/uberteach/<版本>/skills/<skill 名稱>`（Claude Code）——**照這份 SKILL.md 實際的路徑填，不要自己拼**。每一份醫智匯 skill 的 `scripts/read.cjs` 都一樣，這份的找不到就用 `uberteach-connect` 那份的（2026-10-01 第 171 項）。
 
 **一個指令只讀一章**（兩章放在同一個指令裡，加起來就超過讀取工具的上限，會被截掉）。
 每一章的輸出最後一行是「（第 N 章到此結束）」；**沒看到這一行、或看到 `truncated`／`omitted` 之類的省略標記，就單獨再讀那一章**，不要憑記憶補。
