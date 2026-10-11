@@ -1,6 +1,6 @@
-# 醫智匯 plugin 2026.10.3 安全掃描報告
+# 醫智匯 plugin 2026.10.4 安全掃描報告
 
-產生時間：2026-10-07 12:14 UTC　結果：**通過**
+產生時間：2026-10-11 14:19 UTC　結果：**通過**
 
 這份報告由發佈流程自動產生：每一次發佈或改版，plugin 裡的每一份 skill 都用兩個第三方開源掃描工具檢查過，
 工具只在離線模式執行（不連網、不送 AI 分析）。**通過代表「下面列的自動檢查沒有發現擋下的問題」，不代表保證安全。**
@@ -15,119 +15,119 @@
 
 | skill | SkillSpector 風險分數 | 中以上的發現 | 低與資訊 | 結果 |
 |---|---|---|---|---|
-| uberteach-app-metrics | 32 | 3 | 3 | 通過 |
-| uberteach-chart-dashboard | 32 | 3 | 3 | 通過 |
-| uberteach-classify | 32 | 3 | 3 | 通過 |
-| uberteach-connect | 52 | 5 | 3 | 通過 |
-| uberteach-content-site | 32 | 3 | 3 | 通過 |
-| uberteach-faq-bot | 32 | 3 | 3 | 通過 |
-| uberteach-form-app | 32 | 3 | 3 | 通過 |
-| uberteach-html-slides | 32 | 3 | 3 | 通過 |
-| uberteach-new-app | 39 | 4 | 3 | 通過 |
-| uberteach-publish | 32 | 3 | 3 | 通過 |
-| uberteach-sheet-form | 32 | 3 | 3 | 通過 |
-| uberteach-sheet-viewer | 32 | 3 | 3 | 通過 |
-| uberteach-staff-survey | 32 | 3 | 3 | 通過 |
-| uberteach-static-app | 32 | 3 | 3 | 通過 |
-| uberteach-synthetic-data | 32 | 3 | 3 | 通過 |
+| wanfangai-app-metrics | 32 | 3 | 3 | 通過 |
+| wanfangai-chart-dashboard | 32 | 3 | 3 | 通過 |
+| wanfangai-classify | 32 | 3 | 3 | 通過 |
+| wanfangai-connect | 52 | 5 | 3 | 通過 |
+| wanfangai-content-site | 32 | 3 | 3 | 通過 |
+| wanfangai-faq-bot | 32 | 3 | 3 | 通過 |
+| wanfangai-form-app | 32 | 3 | 3 | 通過 |
+| wanfangai-html-slides | 32 | 3 | 3 | 通過 |
+| wanfangai-new-app | 39 | 4 | 3 | 通過 |
+| wanfangai-publish | 32 | 3 | 3 | 通過 |
+| wanfangai-sheet-form | 32 | 3 | 3 | 通過 |
+| wanfangai-sheet-viewer | 32 | 3 | 3 | 通過 |
+| wanfangai-staff-survey | 32 | 3 | 3 | 通過 |
+| wanfangai-static-app | 32 | 3 | 3 | 通過 |
+| wanfangai-synthetic-data | 32 | 3 | 3 | 通過 |
 
 ## 中以上的發現
 
-- **uberteach-app-metrics**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-app-metrics**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-app-metrics**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-app-metrics**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-app-metrics**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-app-metrics**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-chart-dashboard**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-chart-dashboard**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-chart-dashboard**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-chart-dashboard**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-chart-dashboard**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-chart-dashboard**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-classify**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-classify**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-classify**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-classify**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:11`
+- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:11`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-connect**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-connect**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-connect**　［中］SkillSpector E1「External Transmission」　`scripts/bootstrap.cjs:6`
+- **wanfangai-connect**　［中］SkillSpector E1「External Transmission」　`scripts/bootstrap.cjs:6`
   - 已接受：連接平台：把使用者貼的設定碼送到平台換鑰匙（POST /api/v1/agent/bootstrap），鑰匙存在使用者家目錄的 .uberteach。對象只有平台本身。指令與契約 §1 同一份。（2026-10-06）
-- **uberteach-connect**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-connect**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-content-site**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-content-site**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-content-site**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-content-site**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-content-site**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-content-site**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-faq-bot**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-faq-bot**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-faq-bot**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-faq-bot**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-faq-bot**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-faq-bot**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-form-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-form-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-form-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-form-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-form-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-form-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-html-slides**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-html-slides**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-html-slides**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-html-slides**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-html-slides**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-html-slides**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:10`
+- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:10`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-new-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-new-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-new-app**　［中］SkillSpector E1「External Transmission」　`scripts/create-app.cjs:6`
+- **wanfangai-new-app**　［中］SkillSpector E1「External Transmission」　`scripts/create-app.cjs:6`
   - 已接受：建立應用：用平台金鑰呼叫 POST /api/v1/apps。對象只有平台本身。指令與契約 §2 同一份。（2026-10-06）
-- **uberteach-new-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-new-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-publish**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+- **wanfangai-publish**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-publish**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-publish**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-publish**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-publish**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-sheet-form**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-sheet-form**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-sheet-form**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-sheet-form**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-sheet-form**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-sheet-form**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-sheet-viewer**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-sheet-viewer**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-sheet-viewer**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-sheet-viewer**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-sheet-viewer**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-sheet-viewer**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-staff-survey**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-staff-survey**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-staff-survey**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-staff-survey**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-staff-survey**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-staff-survey**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-static-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-static-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-static-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-static-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-static-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-static-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **uberteach-synthetic-data**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-synthetic-data**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
-- **uberteach-synthetic-data**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+- **wanfangai-synthetic-data**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
-- **uberteach-synthetic-data**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
+- **wanfangai-synthetic-data**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
 
 ## 例外清單

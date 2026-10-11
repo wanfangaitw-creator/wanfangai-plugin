@@ -3,7 +3,7 @@
 讓 AI 助手在 醫智匯 院內工具平台上做事時，知道**每一步該讀平台契約的哪一章**，並附上連接與建立應用用的指令。
 規則不在這裡：一律從平台即時讀取（`llms.txt`，一章一章讀）。
 
-> **這個 repo 是產生出來的，不要直接改。**正本在平台的程式碼庫 `plugins/uberteach/`，
+> **這個 repo 是產生出來的，不要直接改。**正本在平台的程式碼庫 `plugins/wanfangai/`，
 > 用 `scripts/plugin-build.mjs` 產生後推到這裡。
 
 ## 安裝
@@ -22,7 +22,7 @@
 
 ```
 claude plugin marketplace add wanfangaitw-creator/wanfangai-plugin
-claude plugin install uberteach@uberteach
+claude plugin install wanfangai@wanfangai
 ```
 
 或在 Claude Code 對話裡打 `/plugin marketplace add wanfangaitw-creator/wanfangai-plugin`，再從 `/plugin` 的清單安裝。裝好之後**重開 Claude** 才會生效。

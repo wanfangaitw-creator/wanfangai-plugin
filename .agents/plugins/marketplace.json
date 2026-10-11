@@ -1,14 +1,14 @@
 {
-  "name": "uberteach",
+  "name": "wanfangai",
   "interface": {
     "displayName": "醫智匯"
   },
   "plugins": [
     {
-      "name": "uberteach",
+      "name": "wanfangai",
       "source": {
         "source": "local",
-        "path": "./plugins/uberteach"
+        "path": "./plugins/wanfangai"
       },
       "policy": {
         "installation": "AVAILABLE",
