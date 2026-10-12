@@ -1,10 +1,13 @@
 ---
 name: wanfangai-classify
-description: 醫智匯工具要寫或改 app-manifest.yml、決定資安等級，或使用者提到病人、員工、名單、要存資料、Google 試算表時用：先做分級問診，這決定工具能不能上線。
+description: 醫智匯平台上的工具要寫或改 app-manifest.yml、決定資安等級時用（使用者提到病人、員工、名單、要存資料、Google 試算表）：先做分級問診，這決定工具能不能上線。不是醫智匯的工具不用這份。
 ---
 
 ## 先用平台工具（這個 plugin 帶了醫智匯的平台工具）
 
+0. **先確定是醫智匯的工具**：使用者沒說要放在醫智匯（院內平台）給院內同仁用、也沒有貼連接頁的文字，只說「做一個小工具」時，
+   先問一句：「這個工具是要放在**醫智匯平台給院內同仁用**，還是**自己用、不放院內**？」
+   答自己用：這份與其他醫智匯 skill 都不用、也不要呼叫 `wanfangai_` 工具，照一般的方式做（2026-10-12 Gary：有些同仁也做自己的專案）。
 1. **先呼叫 `wanfangai_status`**（工具清單裡沒看到就先用工具搜尋找 `wanfangai`）。回了使用者的名字＝平台工具可用，接下來一律用工具：
    查重複 `wanfangai_find_similar`、分級問診 `wanfangai_classify`、建立應用 `wanfangai_create_app`、
    存版本 `wanfangai_save_version`（不用 git、不用打包檢核）、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
