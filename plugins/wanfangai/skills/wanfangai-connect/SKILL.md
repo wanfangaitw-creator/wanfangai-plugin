@@ -3,6 +3,22 @@ name: wanfangai-connect
 description: 使用者貼上 醫智匯平台「連接 AI 助手」頁的文字、給了 XXXX-XXXX 設定碼，或說要在院內平台做工具、改工具時，第一個用這份：連上平台、確認身分。
 ---
 
+## 先用平台工具（這個 plugin 帶了醫智匯的平台工具）
+
+1. **先呼叫 `wanfangai_status`**（工具清單裡沒看到就先用工具搜尋找 `wanfangai`）。回了使用者的名字＝平台工具可用，接下來一律用工具：
+   查重複 `wanfangai_find_similar`、分級問診 `wanfangai_classify`、建立應用 `wanfangai_create_app`、
+   存版本 `wanfangai_save_version`（不用 git、不用打包檢核）、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
+   分級的題目、建立前的確認、發佈前的同意**由平台的表單直接問使用者**：你不要在對話裡問那幾題、不要替他回答、不要自己說是幾級。
+2. 回「Authentication required」：請使用者在 Codex 按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」），在瀏覽器按「允許」，**完成後再呼叫一次**。
+   在這之前**不要改用下面的做法、不要先做本機原型**。
+3. **找不到 `wanfangai_` 開頭的工具**：告訴使用者「醫智匯的平台工具沒有連上」，請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
+   他確認了、還是沒有平台工具，才照下面的做法。
+4. **有平台工具時不要用 `read.cjs`**：做法用 `wanfangai_list_skills`、`wanfangai_read_skill` 讀。
+   `read.cjs` 回 DNS、ENOTFOUND、EAI_AGAIN、fetch failed 這類錯誤，是這台電腦的沙箱擋了它的網路，**不是要重新驗證**：
+   不要叫使用者去按「驗證」，改用平台工具繼續（2026-10-12 演練站：叫使用者去驗證，但他早就驗證過了）。
+5. 下面的做法（讀契約、在對話裡問）只在沒有平台工具時用。
+
+
 # 連接 醫智匯平台
 
 **規則只有一份：平台上的契約（llms.txt）。**這份 skill 不重複規則，只告訴你讀哪幾章、用哪支附帶的指令。

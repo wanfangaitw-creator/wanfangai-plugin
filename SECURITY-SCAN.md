@@ -1,6 +1,6 @@
-# 醫智匯 plugin 2026.10.4 安全掃描報告
+# 醫智匯 plugin 2026.10.8 安全掃描報告
 
-產生時間：2026-10-11 14:19 UTC　結果：**通過**
+產生時間：2026-10-12 07:04 UTC　結果：**通過**
 
 這份報告由發佈流程自動產生：每一次發佈或改版，plugin 裡的每一份 skill 都用兩個第三方開源掃描工具檢查過，
 工具只在離線模式執行（不連網、不送 AI 分析）。**通過代表「下面列的自動檢查沒有發現擋下的問題」，不代表保證安全。**
@@ -17,14 +17,14 @@
 |---|---|---|---|---|
 | wanfangai-app-metrics | 32 | 3 | 3 | 通過 |
 | wanfangai-chart-dashboard | 32 | 3 | 3 | 通過 |
-| wanfangai-classify | 32 | 3 | 3 | 通過 |
-| wanfangai-connect | 52 | 5 | 3 | 通過 |
+| wanfangai-classify | 50 | 6 | 3 | 通過 |
+| wanfangai-connect | 58 | 7 | 3 | 通過 |
 | wanfangai-content-site | 32 | 3 | 3 | 通過 |
 | wanfangai-faq-bot | 32 | 3 | 3 | 通過 |
 | wanfangai-form-app | 32 | 3 | 3 | 通過 |
 | wanfangai-html-slides | 32 | 3 | 3 | 通過 |
-| wanfangai-new-app | 39 | 4 | 3 | 通過 |
-| wanfangai-publish | 32 | 3 | 3 | 通過 |
+| wanfangai-new-app | 58 | 7 | 3 | 通過 |
+| wanfangai-publish | 50 | 5 | 3 | 通過 |
 | wanfangai-sheet-form | 32 | 3 | 3 | 通過 |
 | wanfangai-sheet-viewer | 32 | 3 | 3 | 通過 |
 | wanfangai-staff-survey | 32 | 3 | 3 | 通過 |
@@ -45,15 +45,25 @@
   - 列出供參考（未達擋下門檻）
 - **wanfangai-chart-dashboard**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:14`
+- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:16`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:30`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-classify**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:37`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-classify**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
 - **wanfangai-classify**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:11`
+- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:16`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:27`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-connect**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:33`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-connect**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
@@ -85,7 +95,13 @@
   - 列出供參考（未達擋下門檻）
 - **wanfangai-html-slides**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
-- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:10`
+- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:16`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:26`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-new-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:33`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-new-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
@@ -93,7 +109,11 @@
   - 已接受：建立應用：用平台金鑰呼叫 POST /api/v1/apps。對象只有平台本身。指令與契約 §2 同一份。（2026-10-06）
 - **wanfangai-new-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:31`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
+- **wanfangai-publish**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:16`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-publish**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:17`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-publish**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:33`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
 - **wanfangai-publish**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
