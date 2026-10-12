@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "wanfangai",
-  "version": "2026.10.8",
+  "version": "2026.10.9",
   "description": "醫智匯 院內工具平台：連接、做工具、分級、發佈的做法（平台 platform.wanfangai.tw，契約 2026.10.26，官方 skill 2026.10.3）",
   "homepage": "https://platform.wanfangai.tw",
   "extensions": {
