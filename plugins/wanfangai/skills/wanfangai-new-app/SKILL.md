@@ -10,7 +10,9 @@ description: 在醫智匯平台做一個要給院內同仁用的新工具時用�
    答自己用：這份與其他醫智匯 skill 都不用、也不要呼叫 `wanfangai_` 工具，照一般的方式做（2026-10-12 Gary：有些同仁也做自己的專案）。
 1. **先呼叫 `wanfangai_status`**（工具清單裡沒看到就先用工具搜尋找 `wanfangai`）。回了使用者的名字＝平台工具可用，接下來一律用工具：
    查重複 `wanfangai_find_similar`、分級問診 `wanfangai_classify`、建立應用 `wanfangai_create_app`、
-   存版本 `wanfangai_save_version`（不用 git、不用打包檢核）、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
+   存版本 `wanfangai_save_version`（不用 git；檔案多、有圖片或有建置輸出時，先用 `wanfangai_upload_url` 拿上傳網址，
+   在專案資料夾執行這份 skill 旁 `wanfangai-publish` 的 `scripts/pack-upload.cjs` 打包上傳，再帶 upload_id 存）、
+   換電腦或本機沒有專案資料夾時用 `wanfangai_read_files` 讀回來、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
    分級的題目、建立前的確認、發佈前的同意**由平台的表單直接問使用者**：你不要在對話裡問那幾題、不要替他回答、不要自己說是幾級。
 2. 回「Authentication required」：請使用者在 Codex 按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」），在瀏覽器按「允許」，**完成後再呼叫一次**。
    在這之前**不要改用下面的做法、不要先做本機原型**。
