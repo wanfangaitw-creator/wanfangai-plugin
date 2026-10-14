@@ -1,6 +1,6 @@
 ---
 name: wanfangai-three-d
-description: "醫智匯平台（院內）的官方做法「3D 互動模型（three.js）」：可以用滑鼠或手指轉動、縮放的 3D 模型：解剖位置教學、器材構造、空間動線。模型上的標記點了出現說明。用平台提供的 three.js，不存資料。Unity、Godot、Unreal 匯出的網頁與 WebAssembly 在平台上跑不起來，要做 3D 一律用這份。只用在醫智匯的工具。"
+description: "醫智匯平台（院內）的官方做法「3D 互動模型（three.js）」：可以用滑鼠或手指轉動、縮放的 3D 模型：解剖位置教學、器材構造、空間動線。模型上的標記點了出現說明。用平台提供的 three.js，不存資料。使用者問能不能用 Unity、Godot、Unreal 或 WebAssembly：直接答「不行」（平台跑不起來，不是「不建議」），3D 一律用這份。只用在醫智匯的工具。"
 ---
 
 # 3D 互動模型（three.js）（官方做法 `three-d`）
