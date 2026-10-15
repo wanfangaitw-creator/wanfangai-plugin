@@ -1,6 +1,6 @@
 ---
 name: wanfangai-react-app
-description: "醫智匯平台（院內）的官方做法「React／Vite 網站搬上醫智匯」：已經用 React、Vite 這類工具做好、要先建置（npm run build）才會產生 dist 的網站，搬上醫智匯發佈給院內同仁用；或一開始就想用 React 做。只用在醫智匯的工具。"
+description: "醫智匯平台（院內）的官方做法「React／Vite 網站搬上醫智匯」：已經用 React、Vite 這類工具做好、要先建置（npm run build）才會產生 dist 的網站，搬上醫智匯發佈給院內同仁用；或一開始就想用 React 做；或把已經上架的單頁工具改寫成 React。只用在醫智匯的工具。"
 ---
 
 # React／Vite 網站搬上醫智匯（官方做法 `react-app`）
