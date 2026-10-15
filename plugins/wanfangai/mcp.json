@@ -3,7 +3,10 @@
   "mcpServers": {
     "wanfangai": {
       "type": "streamable-http",
-      "url": "https://platform.wanfangai.tw/mcp"
+      "url": "https://platform.wanfangai.tw/mcp",
+      "headers": {
+        "X-Wanfangai-Plugin-Version": "2026.10.16"
+      }
     }
   }
 }
