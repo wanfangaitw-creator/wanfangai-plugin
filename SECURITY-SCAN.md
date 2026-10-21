@@ -1,6 +1,6 @@
-# 醫智匯 plugin 2026.10.18 安全掃描報告
+# 醫智匯 plugin 2026.10.19 安全掃描報告
 
-產生時間：2026-10-19 11:47 UTC　結果：**通過**
+產生時間：2026-10-21 16:13 UTC　結果：**通過**
 
 這份報告由發佈流程自動產生：每一次發佈或改版，plugin 裡的每一份 skill 都用兩個第三方開源掃描工具檢查過，
 工具只在離線模式執行（不連網、不送 AI 分析）。**通過代表「下面列的自動檢查沒有發現擋下的問題」，不代表保證安全。**
@@ -23,6 +23,7 @@
 | wanfangai-content-site | 32 | 3 | 3 | 通過 |
 | wanfangai-faq-bot | 32 | 3 | 3 | 通過 |
 | wanfangai-form-app | 32 | 3 | 3 | 通過 |
+| wanfangai-gas-sheets-app | 32 | 3 | 2 | 通過 |
 | wanfangai-html-slides | 32 | 3 | 3 | 通過 |
 | wanfangai-new-app | 70 | 9 | 4 | 通過 |
 | wanfangai-publish | 70 | 8 | 4 | 通過 |
@@ -96,6 +97,12 @@
 - **wanfangai-form-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
   - 列出供參考（未達擋下門檻）
 - **wanfangai-form-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:27`
+  - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
+- **wanfangai-gas-sheets-app**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:15`
+  - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）
+- **wanfangai-gas-sheets-app**　［中］SkillSpector LP3「Skill declares no tool scope ('permissions' or 'allowed-tools') but code capabilities were detected: network.」　`SKILL.md:1`
+  - 列出供參考（未達擋下門檻）
+- **wanfangai-gas-sheets-app**　［中］Cisco DATA_EXFIL_JS_NETWORK「Outbound network request primitives in JavaScript/TypeScript」　`scripts/read.cjs:27`
   - 已接受：read.cjs 會連網：只對平台（讀使用說明與 skill）與 raw.githubusercontent.com（讀 plugin 的版本號）發 GET，不送出任何本機資料。（2026-10-06）
 - **wanfangai-html-slides**　［高］SkillSpector AE1「Incomplete referenced artifact analysis」　`SKILL.md:15`
   - 已接受：「引用的檔案沒能完整分析」：SkillSpector 離線時對 JavaScript 只做部分分析，指的是 scripts/read.cjs。這是工具的能力限制，不是發現問題；read.cjs 只讀平台的使用說明與 skill（GET）和 GitHub 上的版本號，同一份檔案由 Cisco Skill Scanner 的行為分析看過。（2026-10-06）

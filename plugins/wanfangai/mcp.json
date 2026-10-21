@@ -5,7 +5,7 @@
       "type": "streamable-http",
       "url": "https://platform.wanfangai.tw/mcp",
       "headers": {
-        "X-Wanfangai-Plugin-Version": "2026.10.18"
+        "X-Wanfangai-Plugin-Version": "2026.10.19"
       }
     }
   }
