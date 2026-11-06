@@ -14,9 +14,16 @@ description: 在醫智匯平台做一個要給院內同仁用的新工具時用�
    在專案資料夾執行這份 skill 旁 `wanfangai-publish` 的 `scripts/pack-upload.cjs` 打包上傳，再帶 upload_id 存）、
    換電腦或本機沒有專案資料夾時用 `wanfangai_read_files` 讀回來、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
    分級的題目、建立前的確認、發佈前的同意**由平台的表單直接問使用者**：你不要在對話裡問那幾題、不要替他回答、不要自己說是幾級。
-2. 回「Authentication required」：請使用者在 Codex 按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」），在瀏覽器按「允許」，**完成後再呼叫一次**。
+2. 回「Authentication required」：請使用者登入，在瀏覽器按「允許」，**完成後再呼叫一次**。
+   Codex：按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」）。
+   Claude 桌面版（Code）：對話裡會出現「This MCP server needs you to sign in」卡片，請他按卡片上的「Open MCP servers」，在 wanfangai 那一列按「Connect」。
+   Claude Code 終端機：在對話框輸入 `/mcp`，選 `plugin:wanfangai:wanfangai` 登入；看不到登入的選項，就請他在終端機執行 `claude mcp login plugin:wanfangai:wanfangai`。
    在這之前**不要改用下面的做法、不要先做本機原型**。
-3. **找不到 `wanfangai_` 開頭的工具**：告訴使用者「醫智匯的平台工具沒有連上」，請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
+3. **找不到 `wanfangai_` 開頭的工具**：告訴使用者「醫智匯的平台工具沒有連上」。
+   Codex：請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
+   Claude 桌面版（Code）：請他到 設定 → Customize → Plugins 打開 Wanfangai，看開關有沒有開、有沒有「Connectors」分頁（沒有就是舊版，按「Update」），再開一個新的 Code 對話。
+   Claude Code 終端機：請他在 `/mcp` 看 `plugin:wanfangai:wanfangai` 是不是被關掉或連不上；清單裡沒有，請他把 Claude 完全關掉重開（剛裝或剛更新外掛時會這樣），
+   還是沒有就執行 `claude plugin update wanfangai@wanfangai` 再重開。
    他確認了、還是沒有平台工具，才照下面的做法。
 4. **有平台工具時不要用 `read.cjs`**：做法用 `wanfangai_list_skills`、`wanfangai_read_skill` 讀。
    `read.cjs` 回 DNS、ENOTFOUND、EAI_AGAIN、fetch failed 這類錯誤，是這台電腦的沙箱擋了它的網路，**不是要重新驗證**：

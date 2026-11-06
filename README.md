@@ -27,6 +27,16 @@ claude plugin install wanfangai@wanfangai
 
 或在 Claude Code 對話裡打 `/plugin marketplace add wanfangaitw-creator/wanfangai-plugin`，再從 `/plugin` 的清單安裝。裝好之後**重開 Claude** 才會生效。
 
+**Claude 桌面版**（Code 分頁）：設定 → Customize → Plugins → 右上角 **Add → Add marketplace**，填 `wanfangaitw-creator/wanfangai-plugin`，按 Sync；
+在清單裡找 Wanfangai，按 **Add to this computer → Install for me**，然後開一個新的 Code 對話。
+
+第一次用醫智匯的平台工具時要登入：
+- **桌面版**：對話裡會出現「This MCP server needs you to sign in」，按 **Open MCP servers**，在 wanfangai 那一列按 **Connect**。
+- **終端機**：在 Claude Code 對話裡打 `/mcp`，選 `plugin:wanfangai:wanfangai` 登入（或在終端機執行 `claude mcp login plugin:wanfangai:wanfangai`）。
+
+瀏覽器會打開「讓 AI 助手連上平台？」頁，確認是自己的名字再按「允許」，回到對話請 AI 助手再做一次。
+2026.11.1 以前的版本沒有帶平台工具給 Claude Code：桌面版在 Wanfangai 的外掛頁按 **Update** 後開新的 Code 對話；終端機執行 `claude plugin update wanfangai@wanfangai` 後重開 Claude。
+
 ## 安全掃描
 
 每一次發佈或改版，這個 plugin 裡的每一份 skill 都用兩個第三方開源工具檢查過：
