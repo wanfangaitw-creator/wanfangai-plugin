@@ -13,7 +13,7 @@ description: 在醫智匯平台做一個要給院內同仁用的新工具時用�
    存版本 `wanfangai_save_version`（不用 git；檔案多、有圖片或有建置輸出時，先用 `wanfangai_upload_url` 拿上傳網址，
    在專案資料夾執行這份 skill 旁 `wanfangai-publish` 的 `scripts/pack-upload.cjs` 打包上傳，再帶 upload_id 存）、
    換電腦或本機沒有專案資料夾時用 `wanfangai_read_files` 讀回來、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
-   分級的題目、建立前的確認、發佈前的同意**由平台的表單直接問使用者**：你不要在對話裡問那幾題、不要替他回答、不要自己說是幾級。
+   分級的題目與建立前的確認**在醫智匯的網頁上由使用者本人答**：工具回網址，把網址給他、請他答完回來說一聲，你再呼叫一次。發佈前的同意**由平台的表單直接問他**。你不要在對話裡問那幾題、不要替他回答、不要用瀏覽器替他按、不要自己說是幾級。
 2. 回「Authentication required」：請使用者登入，在瀏覽器按「允許」，**完成後再呼叫一次**。
    Codex：按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」）。
    Claude 桌面版（Code）：對話裡會出現「This MCP server needs you to sign in」卡片，請他按卡片上的「Open MCP servers」，在 wanfangai 那一列按「Connect」。
@@ -55,6 +55,7 @@ description: 在醫智匯平台做一個要給院內同仁用的新工具時用�
    node "<這個資料夾>/scripts/read.cjs" contract 2.5
    ```
 2. 寫 `app-manifest.yml` 之前，先用 `wanfangai-classify`（分級問診）。
+   **有平台工具時，建立應用用 `wanfangai_create_app`**（不用下面第 4 步的指令）：跟他談好網址代號與名稱後呼叫，平台回一個網址，請他在醫智匯網頁上勾兩項、按「建立」，回來說一聲，你再**只帶 `triage_id`** 呼叫拿起始檔案（2026-11-07 起，M90）。
    **動手寫頁面內容之前**先問他要不要上網找參考資料；查到的事實（規定、時間、別院的作法）**先唸給他確認**才寫進去——
    加一句「以本院規範為準」不等於問過他（2026-10-01 第 175 項）。細節在第 2 章。
    要用 `UberTeach.me({require:"workspace"})` 擋外人時，先看第 4.5 章：他自己用 Gmail 登入的話，他自己也會被擋，**寫之前先問他**（第 173 項）。
