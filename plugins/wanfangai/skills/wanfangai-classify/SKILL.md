@@ -22,7 +22,11 @@ description: 醫智匯平台上做新工具、或要改等級、開放程度、�
    Claude Code 終端機：在對話框輸入 `/mcp`，選 `plugin:wanfangai:wanfangai` 登入；看不到登入的選項，就請他在終端機執行 `claude mcp login plugin:wanfangai:wanfangai`。
    在這之前**不要改用下面的做法、不要先做本機原型**。
 3. **找不到 `wanfangai_` 開頭的工具**：告訴使用者「醫智匯的平台工具沒有連上」。
-   Codex：請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
+   Codex，**以前用過、突然找不到**：多半是連線中斷了，Codex 還留著失效的登入資料，所以不會跳「驗證」（2026-11-13，第 360 項）。
+   照官方做法 `troubleshoot` 的「以前連得上，突然找不到醫智匯的工具」做：請他把 ChatGPT **完全結束再打開**（Windows：工作列右下角的 ChatGPT 圖示按右鍵選「Exit」，只關視窗不算；Mac：⌘Q），
+   到 設定 → 外掛程式 → MCP 在 wanfangai 那一列按「驗證」、在瀏覽器按「允許」，再到 **Codex** **開一個新的對話**（左上角選「Codex」，不是「ChatGPT」；這個對話拿不到工具，不要在這裡重試）；
+   把那一段的網址 https://platform.wanfangai.tw/help#reconnect 給他。不要代跑 `codex mcp logout`、不要用 Computer Use 替他按。
+   **不要叫他重裝外掛**，照那一段做完還是不行才是。第一次用：請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
    Claude 桌面版（Code）：請他到 設定 → Customize → Plugins 打開 Wanfangai，看開關有沒有開、有沒有「Connectors」分頁（沒有就是舊版，按「Update」），再開一個新的 Code 對話。
    Claude Code 終端機：請他在 `/mcp` 看 `plugin:wanfangai:wanfangai` 是不是被關掉或連不上；清單裡沒有，請他把 Claude 完全關掉重開（剛裝或剛更新外掛時會這樣），
    還是沒有就執行 `claude plugin update wanfangai@wanfangai` 再重開。
