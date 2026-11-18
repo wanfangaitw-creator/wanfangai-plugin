@@ -16,7 +16,8 @@ description: 醫智匯平台上做新工具、或要改等級、開放程度、�
    在專案資料夾執行這份 skill 旁 `wanfangai-publish` 的 `scripts/pack-upload.cjs` 打包上傳，再帶 upload_id 存）、
    換電腦或本機沒有專案資料夾時用 `wanfangai_read_files` 讀回來、發佈 `wanfangai_publish`、問狀態與發佈進度 `wanfangai_app_status`。
    分級的題目與建立前的確認**在醫智匯的網頁上由使用者本人答**：工具回網址，把網址給他、請他答完回來說一聲，你再呼叫一次。發佈前的同意**由平台的表單直接問他**。你不要在對話裡問那幾題、不要替他回答、不要用瀏覽器替他按、不要自己說是幾級。
-2. 回「Authentication required」：請使用者登入，在瀏覽器按「允許」，**完成後再呼叫一次**。
+2. 回「Authentication required」：請使用者登入，在瀏覽器**確認頁面上是他本人的名字**（不是就按「換成我的帳號」）、
+   共用電腦**每次都要再勾**「這是大家共用的電腦」（預設不勾），再按「允許」，**完成後再呼叫一次**。
    Codex：按「重新連線」（或 設定 → 外掛程式 → MCP → wanfangai 的「驗證」）。
    Claude 桌面版（Code）：對話裡會出現「This MCP server needs you to sign in」卡片，請他按卡片上的「Open MCP servers」，在 wanfangai 那一列按「Connect」。
    Claude Code 終端機：在對話框輸入 `/mcp`，選 `plugin:wanfangai:wanfangai` 登入；看不到登入的選項，就請他在終端機執行 `claude mcp login plugin:wanfangai:wanfangai`。
@@ -24,16 +25,18 @@ description: 醫智匯平台上做新工具、或要改等級、開放程度、�
 3. **找不到 `wanfangai_` 開頭的工具**：告訴使用者「醫智匯的平台工具沒有連上」。
    Codex，**以前用過、突然找不到**：多半是連線中斷了，Codex 還留著失效的登入資料，所以不會跳「驗證」（2026-11-13，第 360 項）。
    照官方做法 `troubleshoot` 的「以前連得上，突然找不到醫智匯的工具」做：請他把 ChatGPT **完全結束再打開**（Windows：工作列右下角的 ChatGPT 圖示按右鍵選「Exit」，只關視窗不算；Mac：⌘Q），
-   到 設定 → 外掛程式 → MCP 在 wanfangai 那一列按「驗證」、在瀏覽器按「允許」，再到 **Codex** **開一個新的對話**（左上角選「Codex」，不是「ChatGPT」；這個對話拿不到工具，不要在這裡重試）；
+   到 設定 → 外掛程式 → MCP 在 wanfangai 那一列按「驗證」、在瀏覽器確認是他的名字（共用電腦再勾一次「這是大家共用的電腦」）再按「允許」，再到 **Codex** **開一個新的對話**（左上角選「Codex」，不是「ChatGPT」；這個對話拿不到工具，不要在這裡重試）；
    把那一段的網址 https://platform.wanfangai.tw/help#reconnect 給他。不要代跑 `codex mcp logout`、不要用 Computer Use 替他按。
+   共用電腦閒置兩小時、或連上滿 12 小時就會結束，是正常的，照同樣的步驟重新連上就好。
    **不要叫他重裝外掛**，照那一段做完還是不行才是。第一次用：請他到 設定 → 外掛程式 → MCP 看 wanfangai 是不是要按「驗證」。
    Claude 桌面版（Code）：請他到 設定 → Customize → Plugins 打開 Wanfangai，看開關有沒有開、有沒有「Connectors」分頁（沒有就是舊版，按「Update」），再開一個新的 Code 對話。
    Claude Code 終端機：請他在 `/mcp` 看 `plugin:wanfangai:wanfangai` 是不是被關掉或連不上；清單裡沒有，請他把 Claude 完全關掉重開（剛裝或剛更新外掛時會這樣），
    還是沒有就執行 `claude plugin update wanfangai@wanfangai` 再重開。
    他確認了、還是沒有平台工具，才照下面的做法。
 4. **有平台工具時不要用 `read.cjs`**：做法用 `wanfangai_list_skills`、`wanfangai_read_skill` 讀。
-   `read.cjs` 回 DNS、ENOTFOUND、EAI_AGAIN、fetch failed 這類錯誤，是這台電腦的沙箱擋了它的網路，**不是要重新驗證**：
-   不要叫使用者去按「驗證」，改用平台工具繼續（2026-10-12 演練站：叫使用者去驗證，但他早就驗證過了）。
+   `read.cjs` 回 DNS、ENOTFOUND、EAI_AGAIN、ECONNREFUSED、fetch failed 這類錯誤，是這台電腦的沙箱擋了它的網路，**不是平台壞了，也不是要重新驗證**：
+   不要跟使用者說平台連不上、不要叫他去按「驗證」，改用平台工具繼續（2026-10-12 演練站：叫使用者去驗證，但他早就驗證過了）。
+   沒有平台工具、非用 `read.cjs` 不可時，直接用要求提高權限的方式執行它（Codex：`sandbox_permissions: "require_escalated"`；Claude Code：有開沙箱就用 `dangerouslyDisableSandbox: true`），不要先在一般沙箱跑。
 5. **這個平台已停發設定碼**：不要向使用者要設定碼、不要叫他去連接頁產生設定碼，
    也不要找 `bootstrap.cjs`、`create-app.cjs`、`rotate-key.cjs`（這版外掛沒有）；專案鑰匙與 git 也都不用。
    平台工具連不上就停下來，請使用者照第 2、3 步處理，或到平台的「連接 AI 助手」頁看步驟。
