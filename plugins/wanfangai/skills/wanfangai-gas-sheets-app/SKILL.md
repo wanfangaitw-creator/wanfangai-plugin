@@ -1,6 +1,6 @@
 ---
 name: wanfangai-gas-sheets-app
-description: "醫智匯平台（院內）的官方做法「用自己的 Google Apps Script 讀寫試算表」：資料留在負責人自己的試算表、用他自己的 Google Apps Script 讀寫，頁面放在醫智匯。發佈前負責人要在網頁上簽同意書；二級只能院內存取、正式版要審核員核可。只用在醫智匯的工具。"
+description: "醫智匯平台（院內）的官方做法「用自己的 Google Apps Script 讀寫試算表」：資料留在負責人自己的試算表、用他自己的 Google Apps Script 讀寫，頁面放在醫智匯。發佈前負責人要在網頁上簽同意書；二級只能院內存取；開放給任何人的工具只能讀。只用在醫智匯的工具。"
 ---
 
 # 用自己的 Google Apps Script 讀寫試算表（官方做法 `gas-sheets-app`）
